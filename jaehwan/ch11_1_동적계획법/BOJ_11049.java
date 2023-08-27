@@ -37,8 +37,6 @@ public class BOJ_11049 {//[BOJ_11049]행렬곱연산최솟값 jaehwan solved - d
            result = Math.min(result, M[s].y * M[i].x * M[e].x + excute(s, i) + excute(i + 1, e));
         return D[s][e] = result;
     }
-
-    // ������� ���� Class
     static class Matrix {
         private final int y;
         private final int x;
