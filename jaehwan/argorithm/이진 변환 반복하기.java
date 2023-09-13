@@ -17,14 +17,14 @@ public class pro_1 { //이진 변환 반복하기
     static class Solution {
         public int[] solution(String s) { //s로 값을 받음(이진수)
 
-            int count=0;
-            int zeroNum=0;
+            int count=0;//몇번 이진 변환 했는지 
+            int zeroNum=0;//0몇개 제거 했는지
 
             while(!s.equals("1")){
-                int c=0;
+                int c=0;//자리수 체크
                 for(int i=0;i<s.length();i++){
                     if(s.charAt(i)=='0'){
-                        zeroNum++;
+                        zeroNum++; 
                     }
                     else {
                         c++;
