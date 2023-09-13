@@ -5,7 +5,7 @@ import java.util.Scanner;
 import java.util.Stack;
 import java.util.StringTokenizer;
 
-public class BOJ_1935 {
+public class BOJ_1935 { //후위표기식 2
     static BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
     static int[] arr;
     public static void main(String[] args) throws IOException {
@@ -14,11 +14,11 @@ public class BOJ_1935 {
         String s = br.readLine();//표기식
         Stack<Double> st=new Stack<>();
 
-        for(int i=0;i<n;i++){
+        for(int i=0;i<n;i++){ //주어지는 숫자값 
             arr[i]=Integer.parseInt(br.readLine());
         }
 
-        for(int i=0;i<s.length();i++){
+        for(int i=0; i < s.length();i++){
             char ch = s.charAt(i);
             if('A' <= ch && ch <= 'Z'){ //알파벳이면
                 st.push((double)arr[ch-'A']); //숫자로 만들어서 넣어줌
@@ -28,7 +28,7 @@ public class BOJ_1935 {
                 double b=st.pop();
                 switch (ch){
                     case '+':
-                        st.push(b+a);
+                        st.push(b+a); //스택에서 꺼내므로 a b순서대로 넣었다고 생각하면 a.pop= b b.pop=a가 되므로 b ? a순서대로 연산한다.
                         break;
                     case '-':
                         st.push(b-a);
